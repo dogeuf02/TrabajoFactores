@@ -1,0 +1,82 @@
+.orderFailurePage {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.failureContainer {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 45px;
+}
+
+.failureIcon {
+  margin-bottom: 1rem;
+}
+
+.failureContainer h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.errorDetails {
+  text-align: left;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.errorDetails h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.errorDetails p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.failureActions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tryAgain,
+.backToCatalog {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tryAgain {
+  background: #ff6b6b;
+  color: white;
+}
+
+.tryAgain:hover {
+  background: #f55656;
+}
+
+.backToCatalog {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.backToCatalog:hover {
+  background: #e0e0e0;
+}
+

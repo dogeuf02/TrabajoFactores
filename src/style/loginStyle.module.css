@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+.div70px {
+  height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  scrollbar-width: none;
+}
+
+body {
+  margin: 0;
+}
+
+.logo {
+  height: 95%;
+  min-height: 70%;
+  display: block;
+  margin: auto;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2rem 2rem 2.5rem;
+  background-color: #ffddb89b;
+  width: 100vw;
+}
+
+.sesion {
+  width: 40%;
+  border: 1px solid rgba(16, 16, 16, 0.6);
+  border-radius: 3px;
+  padding-bottom: 2rem;
+}
+
+.modelo {
+  display: flex;
+  justify-content: center;
+  width: 55%;
+  border: 1px solid rgba(16, 16, 16, 0.6);
+  border-radius: 3px;
+}
+
+.robot {
+  width: 17%;
+  margin: 1rem auto 1.5rem;
+  display: block;
+}
+
+.leyenda {
+  text-align: center;
+}
+
+.formulario {
+  position: relative;
+  width: 80%;
+  font-family: "Outfit", Arial;
+  padding: 1.4rem 2rem 1rem;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid rgba(249, 152, 152, 0.6);
+}
+
+.sub {
+  display: block;
+  color: black;
+}
+
+.sub:not(.inicial) {
+  margin-top: 20px;
+}
+
+.sujeto {
+  font-family: unset;
+  font-size: 11px;
+  width: 7rem;
+  height: 1.3rem;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
+  background-color: rgba(255, 191, 73, 0.238);
+  color: black;
+  border-radius: none;
+}
+
+.usuario,
+.contra {
+  display: block;
+  font-family: "Outfit", Arial;
+  width: 90%;
+  height: 2rem;
+  padding: 8px;
+  margin-top: 7px;
+  background-color: white;
+  border: 1px solid rgba(174, 174, 174, 0.9);
+}
+
+.usuario:focus,
+.contra:focus {
+  background-color: rgba(235, 235, 235, 0.6);
+  border: 1px solid rgba(129, 129, 129, 0.9);
+}
+
+.usuario:hover,
+.contra:hover {
+  background-color: rgba(245, 245, 245, 0.6);
+  border: 2px solid rgba(59, 59, 59, 0.5);
+}
+
+.inicioSesion {
+  font-family: "Outfit", Arial;
+  width: 40%;
+  height: 2.5rem;
+  padding: 10px;
+  text-transform: uppercase;
+  margin: 20px auto 0.5rem;
+  display: block;
+  border-radius: 4px;
+  background-color: rgba(240, 0, 0, 0.154);
+  border: 1px solid rgba(30, 30, 30, 0.3);
+  color: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.inicioSesion:hover {
+  cursor: pointer;
+  background-color: rgba(235, 235, 235, 0.6);
+  border: 1px solid rgba(30, 30, 30, 0.6);
+  box-shadow: 3px 15px 10px 3px rgba(192, 192, 192, 0.1);
+}
+
+.inicioSesion:active {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.registro {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(255, 0, 0);
+}
+
+.registro > .a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+
+.registro > .a:hover {
+  color: rgb(140, 140, 140);
+  font-weight: 500;
+  border-bottom: 2px solid rgba(43, 43, 43, 0.918);
+}
+
+
+
+
+.muestra {
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+.downFade {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.boxFade {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.boxFade.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.boxFade.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.boxFade.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.boxFade.fourth {
+  margin-top: 15px;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.fifth {
+  -webkit-animation-delay: 1.7s;
+  -moz-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+

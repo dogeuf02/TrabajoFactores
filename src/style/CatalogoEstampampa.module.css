@@ -1,0 +1,157 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: unset;
+}
+
+
+.linea {
+  background-color: #000000;
+  height: 1px;
+  width: 95%;
+  margin: 0;
+  margin-left: 2.5%;
+  padding: 0;
+}
+
+.filtroContainer {
+  width: 668px;
+  margin: 20px auto;
+  display: grid;
+  place-items: center;
+  align-items: center;
+  grid-template-columns: 170px 190px 228px;
+  gap: 40px;
+}
+
+.selectTrigger {
+  width: 170px;
+  font-size: 16px;
+  color: #626262;
+  font-weight: 300;
+}
+
+.rango {
+  font-size: 16px;
+  color: #626262;
+  font-weight: 300;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.range {
+  width: 190px;
+}
+
+.colores {
+  display: flex;
+  gap: 10px;
+  width: 228px;
+  margin: 0;
+  padding: 0;
+}
+
+.colorButton {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.084);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.colorActivo {
+  border: 1px solid #000000;
+}
+
+/*Catalogo*/
+
+.catalogoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.carta {
+  position: relative;
+  width: 200px;
+  text-align: left;
+}
+
+.contimagen {
+  position: relative;
+  height: 300px;
+  width: inherit;
+  align-content: center;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carta:hover .contimagen {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.166);
+}
+
+.imagen {
+  width: inherit;
+  height: inherit;
+  object-fit: contain;
+}
+
+.nombre {
+  font-size: 1.2em;
+  margin: 4px;
+  padding: 8px 0 4px 0;
+  color: #333;
+  font-weight: 450;
+}
+
+.precio {
+  font-size: 1em;
+  color: #666;
+  margin: 4px;
+}
+
+.artista {
+  font-size: 0.9em;
+  color: #888;
+  margin: 4px;
+}
+
+.favoriteButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color:rgb(255, 255, 255);
+  font-size: 20px;
+  color: #898989;
+  cursor: pointer;
+}
+
+
+.btnCamisa {
+  position: absolute;
+  background-color: rgba(6, 6, 6, 0.205);
+  visibility: hidden;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 15px;
+}
+
+.carta:hover .btnCamisa {
+  visibility: visible;
+  opacity: 1;
+}

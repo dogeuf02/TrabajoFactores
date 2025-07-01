@@ -1,0 +1,111 @@
+*{
+  font-family: unset;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+.user{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 8px 2px#4a556831;
+  margin-right: 30px;
+}
+
+.userCard {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgb(197, 197, 197);
+  display: flex;
+}
+.datos{
+  height: 6rem;
+  align-content: center;
+}
+.datos>h3{
+  margin-bottom: 20px;
+}
+
+.tabList {
+  display: flex;
+}
+
+.tabButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-size: 15px;
+}
+
+.activeTab {
+  border-bottom: 2px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.tabContent {
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+input  {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form input,
+.form select,
+.form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cardActions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cardActions button:first-child {
+  background-color: #358eec;
+  color: white;
+}
+
+.cardActions button:last-child {
+  background-color: #d45b67;
+  color: white;
+}
+
+.boton{
+  background-color: #67b0ff;
+  color: white;
+  border-radius: 5px;
+}

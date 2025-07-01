@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+ 
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+ 
+.tableHeader {
+  background-color: #f3f4f6;
+}
+ 
+.tableHeader th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+}
+ 
+.tableBody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+ 
+.textRight {
+  text-align: right;
+}
+ 
+.totalRow {
+  font-weight: 600;
+}
+ 
+.totalRow td {
+  border-top: 2px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+ 
+.totalEarnings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecfdf5;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+ 
+.totalAmount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #059669;
+  margin-left: 0.75rem;
+}
+ 
