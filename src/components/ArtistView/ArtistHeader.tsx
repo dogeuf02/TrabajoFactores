@@ -9,6 +9,7 @@ import User from "../../assets/ProfileArtist.png"
 interface ArtistHeaderProps {
   initialName: string
   initialDescription: string
+  avatarUrl?: string
 }
 
 export default function ArtistHeader({ initialName, initialDescription }: ArtistHeaderProps) {
