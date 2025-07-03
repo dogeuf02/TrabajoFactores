@@ -1,28 +1,26 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'url'; // Importa esto para paths
+import path from 'path'; // Añade esta línea
 
-// https://vitejs.dev/config/
+// Configuración para ES Modules
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Asegura que las rutas sean absolutas desde la raíz
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
   build: {
-    outDir: 'dist', // Directorio de salida explícito
-    emptyOutDir: true, // Limpia el directorio en cada build
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
-      input: 'src/main.jsx',
-      output: {
-        manualChunks: {
-          // Divide los chunks para optimizar carga
-          react: ['react', 'react-dom'],
-          vendor: ['lodash', 'axios'] // Añade otras dependencias grandes aquí
-        }
-      }
-    },
-    chunkSizeWarningLimit: 1000, // Aumenta el límite de warning
+      input: path.resolve(__dirname, './index.html')
+    }
   },
   server: {
-    // Configuración para desarrollo si es necesario
-    port: 3000,
-    open: true
+    port: 3000
   }
-})
+});
