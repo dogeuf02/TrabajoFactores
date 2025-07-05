@@ -61,15 +61,15 @@ function PagPrincipal() {
 
       <div className={style.imagenes}>
         <div className={style.imgpag}>
-          <h1>CUMPLE TUS METAS</h1>
+          <h3>CUMPLE TUS METAS</h3>
           <img src={Img1} alt="img1" />
         </div>
         <div className={style.imgpag}>
-          <h1>COMPRA</h1>
+          <h3>COMPRA</h3>
           <img src={Img2} alt="im2" />
         </div>
         <div className={style.imgpag}>
-          <h1>ESTRENA</h1>
+          <h3>ESTRENA</h3>
           <img src={Img3} alt="im3" />
         </div>
       </div>
