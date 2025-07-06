@@ -19,7 +19,7 @@ function NavBar({}: Props) {
     <div className={style.navb}>
       <div className={style.opciones}>
         <Link to="/catalogo" className={style.catalogo}>
-          <span>Catálogo: más de 1000 estampas</span>
+          <h3>Catálogo</h3> <p>más de 1000 catálogos</p>
         </Link>
         <div className={style.linea}></div>
         <Link to="/" className={style.catalogo}>
