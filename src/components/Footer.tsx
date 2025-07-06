@@ -9,29 +9,46 @@ export default function Footer() {
       <footer className={style.footer}>
         <div className="redes">
           <h3 className={style.titulo}>Síguenos en: </h3>
-          <i className="bi bi-facebook"></i>
-          <i className="bi bi-instagram"></i>
-          <i className="bi bi-tiktok"></i>
+          <a href="https://facebook.com">
+            <span className="sr-only">Facebook</span>
+            <i className="bi bi-facebook" />
+          </a>
+          <a href="https://instagram.com">
+            <span className="sr-only">Instagram</span>
+            <i className="bi bi-instagram" />
+          </a>
+          <a href="https://tiktok.com">
+            <span className="sr-only">TikTok</span>
+            <i className="bi bi-tiktok" />
+          </a>
         </div>
         <div className={style.acercaDe}>
           <h3 className={style.titulo}>Acerca de 404 NOT FOUND</h3>
-          <ul>Aviso de Privacidad</ul>
-          <ul>Términos y condiciones</ul>
-          <ul>Formas de pago</ul>
-          <ul>Nuestro Catalogo</ul>
+          <ul>
+            <li>Aviso de Privacidad</li>
+            <li>Términos y condiciones</li>
+            <li>Formas de pago</li>
+            <li>Nuestro Catálogo</li>
+          </ul>
         </div>
         <div className={style.superintendencia}>
           <h3 className={style.titulo}>
             Superintendencia de industria y comercio
           </h3>
-          <img src={sic} alt="sic" className={style.sic}/>
+          <img
+            src={sic}
+            alt="Logo de la Superintendencia de Industria y Comercio de Colombia"
+            className={style.sic}
+          />
         </div>
         <div className={style.info}>
           <h3 className={style.titulo}>Información adicional</h3>
-          <ul>Registro</ul>
-          <ul>Contáctanos</ul>
-          <ul>Política de Protección de Datos</ul>
-          <ul>Soporte</ul>
+          <ul>
+            <li>Registro</li>
+            <li>Contáctanos</li>
+            <li>Política de Protección de Datos</li>
+            <li>Soporte</li>
+          </ul>
         </div>
       </footer>
     </section>
