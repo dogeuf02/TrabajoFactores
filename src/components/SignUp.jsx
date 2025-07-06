@@ -51,30 +51,30 @@ function SignUp() {
   };
 
   const handleRegister = async () => {
-    let direccion  = "http://localhost:8080/default-login";
-    if ( formData.tipo == "cliente"){
-     direccion = "http://localhost:8080/clientes/register";  
+    let direccion = "http://localhost:8080/default-login";
+    if (formData.tipo == "cliente") {
+      direccion = "http://localhost:8080/clientes/register";
     }
-    if (formData.tipo  == "artista"){
-      direccion = "http://localhost:8080/artista/register";  
-     }
+    if (formData.tipo == "artista") {
+      direccion = "http://localhost:8080/artista/register";
+    }
 
     try {
-      if (direccion =="http://localhost:8080/default-login" ){
+      if (direccion == "http://localhost:8080/default-login") {
         alert('login fallido, seleccione tipo de login')
         return false
       }
-     console.log(formData)
+      console.log(formData)
       const response = await axios.get(direccion, {
         params: {
-        nombre: formData.nombre,
-        apellido: formData.apellido,
-        tipo_id: formData.tipoDocumento,
-        numero_id: formData.documento,
-        correo: formData.correo,
-        usuario: formData.usuario,
-        contrasena: formData.contra,
-      },
+          nombre: formData.nombre,
+          apellido: formData.apellido,
+          tipo_id: formData.tipoDocumento,
+          numero_id: formData.documento,
+          correo: formData.correo,
+          usuario: formData.usuario,
+          contrasena: formData.contra,
+        },
       });
 
       if (response.data === true) {
@@ -93,7 +93,7 @@ function SignUp() {
           className={`${styles.mosaico} ${styles["box-fade"]} ${styles.seventh} ${styles.boxFade} ${styles.first}`}
         ></div>
         <div className={styles.contenidoRegistro}>
-          <div
+          <section
             className={`${styles.cajaRegistro} ${styles.downFade}`}
             aria-labelledby="registro"
           >
@@ -128,12 +128,12 @@ function SignUp() {
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.third}`} htmlFor="correo">
                 Correo
-                <input id="correo" type="email" className={`${styles.correoC} ${styles.boxFade} ${styles.third}`}  placeholder="Digite su correo" required value={formData.correo} onChange={handleChange} />
+                <input id="correo" type="email" className={`${styles.correoC} ${styles.boxFade} ${styles.third}`} placeholder="Digite su correo" required value={formData.correo} onChange={handleChange} />
               </label>
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.third}`} htmlFor="usuario">
                 Usuario
-                <input id="usuario"  className={`${styles.usuarioC} ${styles.boxFade} ${styles.third}`} type="text" placeholder="Digite su usuario" required value={formData.usuario} onChange={handleChange} />
+                <input id="usuario" className={`${styles.usuarioC} ${styles.boxFade} ${styles.third}`} type="text" placeholder="Digite su usuario" required value={formData.usuario} onChange={handleChange} />
               </label>
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.third}`} htmlFor="contra">
@@ -181,10 +181,11 @@ function SignUp() {
                 ¿Ya tienes cuenta? <Link to="/login" className={styles.a}>Inicia sesión</Link>
               </h3>
             </form>
-          </div>
+          </section>  {/* ← Cierre correcto del section (cajaRegistro) */}
         </div>
-      </section>
+      </section> {/* ← Cierre correcto del section (contenido) */}
     </div>
+
   );
 }
 
