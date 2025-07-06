@@ -19,20 +19,25 @@ function NavBar({}: Props) {
     <div className={style.navb}>
       <div className={style.opciones}>
         <Link to="/catalogo" className={style.catalogo}>
-          <h3>Catalogo</h3> <p>+1000 estampas</p>
+          <span>Catálogo: más de 1000 estampas</span>
         </Link>
         <div className={style.linea}></div>
         <Link to="/" className={style.catalogo}>
-          <h3>Artistas</h3> <p>+100 artistas</p>
+          <h3>Artistas</h3> <p>más de 100 artistas</p>
         </Link>
       </div>
 
       <Link to="/pagPrincipal" className={style.logo}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo tienda de estampas" />
       </Link>
 
       <div className={style.icons}>
-        <i className={`${style.bi} ${["bi-bag-heart-fill"]}`}></i>
+        <button
+          className={`${style.bi} bi-bag-heart-fill`}
+          aria-label="Favoritos"
+        >
+        </button>
+
         <div className={style.linea}></div>
         <i
           className={`${style.bi} ${["bi-person-fill"]}`}
