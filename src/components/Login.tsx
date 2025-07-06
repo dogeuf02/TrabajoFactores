@@ -5,7 +5,7 @@ import muestra from "../assets/LoginSignup/404Muestra.jpg";
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, Navigate, redirect } from "react-router-dom";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -23,21 +23,21 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     let direccion: string = "http://localhost:8080/default-login";
-    if (tipoCliente == "cliente"){
-     direccion = "http://localhost:8080/clientes/login";  
+    if (tipoCliente == "cliente") {
+      direccion = "http://localhost:8080/clientes/login";
     }
-    if (tipoCliente == "artista"){
-      direccion = "http://localhost:8080/artista/login";  
-     }
-   
+    if (tipoCliente == "artista") {
+      direccion = "http://localhost:8080/artista/login";
+    }
+
     try {
       // Enviamos la solicitud GET al backend
-      if (direccion =="http://localhost:8080/default-login" ){
+      if (direccion == "http://localhost:8080/default-login") {
         alert('login fallido, seleccione tipo de login')
         return false
       }
       const response = await axios.get<number>(
-        
+
 
         direccion,
         {
@@ -51,24 +51,24 @@ const Login: React.FC = () => {
       if (response.status === 200) {
         localStorage.setItem('idCliente', response.data.toString());
         console.log(localStorage.getItem('idCliente'));
-        if(tipoCliente =="cliente"){
+        if (tipoCliente == "cliente") {
           navigate("/");
         }
-        if(tipoCliente =="artista"){
+        if (tipoCliente == "artista") {
           navigate("/artista");
         }
-        
+
       }
 
     } catch (error) {
       if (axios.isAxiosError(error)) { // ← Verifica si es un error de Axios
         if (error.response?.status === 401) {
-            alert("Credenciales incorrectas");
+          alert("Credenciales incorrectas");
         }
-    }
       }
+    }
 
-    
+
   };
 
   return (
@@ -86,13 +86,17 @@ const Login: React.FC = () => {
                   alt="User"
                 />
               </legend>
+              <label htmlFor="tipoCliente" className={style.etiquetaOculta}>
+                Tipo de usuario
+              </label>
               <select
+                id="tipoCliente"
                 className={`${style.sujeto} ${style.boxFade} ${style.first}`}
                 name="TipoCliente"
                 onChange={handleChange}
                 required
               >
-                <option>¿Qué eres?</option>
+                <option value="">¿Qué eres?</option>
                 <option value="cliente">Cliente</option>
                 <option value="artista">Artista</option>
                 <option value="administrador">Administrador</option>
