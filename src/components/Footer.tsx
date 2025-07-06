@@ -25,10 +25,10 @@ export default function Footer() {
         <div className={style.acercaDe}>
           <h3 className={style.titulo}>Acerca de 404 NOT FOUND</h3>
           <ul>
-            <li>Aviso de Privacidad</li>
-            <li>Términos y condiciones</li>
-            <li>Formas de pago</li>
-            <li>Nuestro Catálogo</li>
+            <li><a href="/aviso-privacidad">Aviso de Privacidad</a></li>
+            <li><a href="/terminos-condiciones">Términos y condiciones</a></li>
+            <li><a href="/formas-pago">Formas de pago</a></li>
+            <li><a href="/catalogo">Nuestro Catálogo</a></li>
           </ul>
         </div>
         <div className={style.superintendencia}>
@@ -44,10 +44,10 @@ export default function Footer() {
         <div className={style.info}>
           <h3 className={style.titulo}>Información adicional</h3>
           <ul>
-            <li>Registro</li>
-            <li>Contáctanos</li>
-            <li>Política de Protección de Datos</li>
-            <li>Soporte</li>
+            <li><a href="/registro">Registro</a></li>
+            <li><a href="/contacto">Contáctanos</a></li>
+            <li><a href="/politica-datos">Política de Protección de Datos</a></li>
+            <li><a href="/soporte">Soporte</a></li>
           </ul>
         </div>
       </footer>

@@ -49,7 +49,7 @@ function PagPrincipal() {
       <div className={style.contCards}>
         {contCard.map((cont) => (
           <div className={style.carta}>
-            <img src={cont.img} alt="Camiseta temática" />
+            <img src={cont.img} alt={`Camiseta temática de ${cont.text}`} />
             <div className={style.infoCard}>
               <Link to="/catalogo" className={style.btnCard}>
                 {cont.text}

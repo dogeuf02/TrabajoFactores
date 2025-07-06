@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 type Props = {};
 
-function NavBar({}: Props) {
+function NavBar({ }: Props) {
   const navigate = useNavigate();
 
   const handleAccount = () => {
@@ -42,6 +42,10 @@ function NavBar({}: Props) {
         <i
           className={`${style.bi} ${["bi-person-fill"]}`}
           onClick={handleAccount}
+          aria-label="Cuenta de usuario"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if (e.key === 'Enter') handleAccount(); }}
         ></i>
         <div className={style.linea}></div>
         <Link to="/cart" className={style.bi}>
