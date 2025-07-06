@@ -39,20 +39,20 @@ function PagPrincipal() {
     <div className={style.homePage}>
       <Slider {...sliderSettings} className={style.slider}>
         <div className={style.imgCarrusel}>
-          <img src={Slider1} alt="Slider 1" />
+          <img src={Slider1} alt="Promoción de camisetas personalizadas" />
         </div>
         <div className={style.imgCarrusel}>
-          <img src={Slider2} alt="Slider 2" />
+          <img src={Slider2} alt="Nueva colección de artistas" />
         </div>
       </Slider>
 
       <div className={style.contCards}>
         {contCard.map((cont) => (
           <div className={style.carta}>
-            <img src={cont.img} alt="" />
+            <img src={cont.img} alt="Camiseta temática" />
             <div className={style.infoCard}>
-              <Link to="/catalogo">
-                <button className={style.btnCard}>{cont.text}</button>
+              <Link to="/catalogo" className={style.btnCard}>
+                {cont.text}
               </Link>
             </div>
           </div>
@@ -61,16 +61,16 @@ function PagPrincipal() {
 
       <div className={style.imagenes}>
         <div className={style.imgpag}>
-          <h3>CUMPLE TUS METAS</h3>
-          <img src={Img1} alt="img1" />
+          <h4>CUMPLE TUS METAS</h4>
+          <img src={Img1} alt="Modelo usando camiseta con diseño motivaciona" />
         </div>
         <div className={style.imgpag}>
-          <h3>COMPRA</h3>
-          <img src={Img2} alt="im2" />
+          <h4>COMPRA</h4>
+          <img src={Img2} alt="Imagen promocional de compra de camisetas" />
         </div>
         <div className={style.imgpag}>
-          <h3>ESTRENA</h3>
-          <img src={Img3} alt="im3" />
+          <h4>ESTRENA</h4>
+          <img src={Img3} alt="Persona estrenando camiseta nueva" />
         </div>
       </div>
     </div>
