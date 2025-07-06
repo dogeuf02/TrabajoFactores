@@ -23,21 +23,13 @@ function SignUp() {
   const [longitudValida, setLongitudValida] = useState(false);
   const [tieneNumero, setTieneNumero] = useState(false);
   const [mensajeError, setMensajeError] = useState("");
-  const [requisitos, setRequisitos] = useState({
-    longitudValida: false,
-    tieneNumero: false,
-  });
 
   const handlePasswordChange = (e) => {
     const passwordValue = e.target.value;
-    setFormData({
-      ...formData,
-      contra: passwordValue,
-    });
-    setRequisitos({
-      longitudValida: passwordValue.length >= 8,
-      tieneNumero: /\d/.test(passwordValue),
-    });
+    setPassword(passwordValue);
+    setLongitudValida(passwordValue.length >= 8);
+    setTieneNumero(/\d/.test(passwordValue));
+    setFormData({ ...formData, contra: passwordValue });
   };
 
   const handleChange = (e) => {
@@ -59,29 +51,39 @@ function SignUp() {
   };
 
   const handleRegister = async () => {
-    let direccion = "http://localhost:8080/default-login";
-    if (formData.tipo == "cliente") {
-      direccion = "http://localhost:8080/clientes/register";
+    let direccion  = "http://localhost:8080/default-login";
+    if ( formData.tipo == "cliente"){
+     direccion = "http://localhost:8080/clientes/register";  
     }
-    if (formData.tipo == "artista") {
-      direccion = "http://localhost:8080/artista/register";
-    }
+    if (formData.tipo  == "artista"){
+      direccion = "http://localhost:8080/artista/register";  
+     }
 
     try {
-      if (direccion == "http://localhost:8080/default-login") {
-        alert('Seleccione un tipo de registro válido');
-        return false;
+      if (direccion =="http://localhost:8080/default-login" ){
+        alert('login fallido, seleccione tipo de login')
+        return false
       }
-
-      const response = await axios.post(direccion, formData);
+     console.log(formData)
+      const response = await axios.get(direccion, {
+        params: {
+        nombre: formData.nombre,
+        apellido: formData.apellido,
+        tipo_id: formData.tipoDocumento,
+        numero_id: formData.documento,
+        correo: formData.correo,
+        usuario: formData.usuario,
+        contrasena: formData.contra,
+      },
+      });
 
       if (response.data === true) {
         alert("Registro exitoso");
         navigate("/login");
       }
     } catch (error) {
-      console.error(error);
-      setMensajeError("Error en el registro. Intente nuevamente.");
+      console.log(error)
+      alert("Error en el registro. Intente nuevamente.");
     }
   };
   return (
@@ -110,20 +112,15 @@ function SignUp() {
                 <input id="apellido" className={`${styles.apellidoC} ${styles.boxFade} ${styles.first}`} type="text" placeholder="Digite su apellido" required value={formData.apellido} onChange={handleChange} />
               </label>
 
-              <label className={`${styles.sub} ${styles.boxFade} ${styles.second}`} htmlFor="documento">
-                Documento de identidad
-                <input
-                  id="documento"
-                  className={`${styles.documentoC} ${styles.boxFade} ${styles.second}`}
-                  type="text"
-                  placeholder="Digite su documento"
-                  aria-describedby="documento-help"
-                  required
-                  value={formData.documento}
-                  onChange={handleChange}
-                />
-                <span id="documento-help" className={styles.ayuda}>Formato: 8-12 dígitos sin puntos ni espacios</span>
+              <label className={`${styles.sub} ${styles.boxFade} ${styles.second}`} htmlFor="tipoDocumento">
+                Tipo de documento
+                <select id="tipoDocumento" className={`${styles.tipoDocumentoC} ${styles.boxFade} ${styles.second}`} required value={formData.tipoDocumento} onChange={handleChange}>
+                  <option value="CC">Cédula de ciudadanía</option>
+                  <option value="TE">Tarjeta de extranjería</option>
+                  <option value="PA">Pasaporte</option>
+                </select>
               </label>
+
               <label className={`${styles.sub} ${styles.boxFade} ${styles.second}`} htmlFor="documento">
                 Documento de identidad
                 <input id="documento" className={`${styles.documentoC} ${styles.boxFade} ${styles.second}`} type="text" placeholder="Digite su documento" required value={formData.documento} onChange={handleChange} />
@@ -131,46 +128,30 @@ function SignUp() {
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.third}`} htmlFor="correo">
                 Correo
-                <input id="correo" type="email" className={`${styles.correoC} ${styles.boxFade} ${styles.third}`} placeholder="Digite su correo" required value={formData.correo} onChange={handleChange} />
+                <input id="correo" type="email" className={`${styles.correoC} ${styles.boxFade} ${styles.third}`}  placeholder="Digite su correo" required value={formData.correo} onChange={handleChange} />
               </label>
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.third}`} htmlFor="usuario">
                 Usuario
-                <input id="usuario" className={`${styles.usuarioC} ${styles.boxFade} ${styles.third}`} type="text" placeholder="Digite su usuario" required value={formData.usuario} onChange={handleChange} />
+                <input id="usuario"  className={`${styles.usuarioC} ${styles.boxFade} ${styles.third}`} type="text" placeholder="Digite su usuario" required value={formData.usuario} onChange={handleChange} />
               </label>
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.third}`} htmlFor="contra">
                 Contraseña
-                <div className={styles.passwordWrapper}>
-                  <input
-                    id="contra"
-                    className={`${styles.contraC} ${styles.boxFade} ${styles.third}`}
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Digite su contraseña"
-                    aria-describedby="requisitos-contraseña"
-                    onChange={handlePasswordChange}
-                    required
-                  />
-                  <button
-                    type="button"
-                    className={styles.togglePassword}
-                    onClick={() => setShowPassword(!showPassword)}
-                    aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
-                  >
-                    {showPassword ? "🙈" : "👀"}
-                  </button>
-                </div>
+                <input
+                  id="contra"
+                  className={`${styles.contraC} ${styles.boxFade} ${styles.third}`}
+                  type="password"
+                  placeholder="Digite su contraseña"
+                  pattern="^(?=.*\d)[A-Za-z\d]{8,}$"
+                  onChange={handlePasswordChange}
+                  required
+                />
               </label>
 
-              <ul id="requisitos-contraseña"
-                className={styles.requisitos}
-                style={{ display: requisitos.longitudValida && requisitos.tieneNumero ? "none" : "block" }}>
-                <li className={requisitos.longitudValida ? styles.cumplido : ""}>
-                  {requisitos.longitudValida ? "✓" : "✗"} Mínimo 8 caracteres
-                </li>
-                <li className={requisitos.tieneNumero ? styles.cumplido : ""}>
-                  {requisitos.tieneNumero ? "✓" : "✗"} Al menos un número
-                </li>
+              <ul className={styles.requisitos} style={{ display: longitudValida && tieneNumero ? "none" : "block" }}>
+                <li className={longitudValida ? styles.cumplido : ""}>Debe tener 8 o más caracteres</li>
+                <li className={tieneNumero ? styles.cumplido : ""}>Debe contener al menos un número</li>
               </ul>
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.fourth}`} htmlFor="validacion">
@@ -178,9 +159,8 @@ function SignUp() {
                 <input id="validacion" className={`${styles.validacionC} ${styles.boxFade} ${styles.fourth}`} type="password" placeholder="Digite nuevamente su contraseña" required value={formData.validacion} onChange={handleChange} />
               </label>
 
-              <span className={styles.error} aria-live="assertive">
-                {mensajeError}
-              </span>              <br />
+              <span className={styles.error}>{mensajeError}</span>
+              <br />
 
               <label className={`${styles.sub} ${styles.boxFade} ${styles.fifth}`} htmlFor="tipo">
                 ¿Qué quieres ser?

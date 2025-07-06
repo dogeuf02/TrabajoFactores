@@ -15,43 +15,6 @@ input {
   background-color: rgb(255, 255, 255);
 }
 
-.passwordWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.togglePassword {
-  position: absolute;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-}
-
-.requisitos {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0 0;
-  font-size: 0.8em;
-}
-
-.requisitos li {
-  margin: 3px 0;
-}
-
-.cumplido {
-  color: green;
-}
-
-.error {
-  color: red;
-  font-size: 0.9em;
-  display: block;
-  margin-top: 5px;
-}
-
 .contenido {
   background-color: #f8fdff;
   display: flex;
