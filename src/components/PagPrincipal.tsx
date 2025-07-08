@@ -37,6 +37,8 @@ function PagPrincipal() {
 
   return (
     <div className={style.homePage}>
+
+       <h1 className={style.tituloPagina}>Bienvenido a 404 Not Found - Tienda de Estampas</h1>
       <Slider {...sliderSettings} className={style.slider}>
         <div className={style.imgCarrusel}>
           <img src={Slider1} alt="Promoción de camisetas personalizadas" />
