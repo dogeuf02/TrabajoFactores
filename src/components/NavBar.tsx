@@ -48,9 +48,11 @@ function NavBar({ }: Props) {
           onKeyDown={(e) => { if (e.key === 'Enter') handleAccount(); }}
         ></i>
         <div className={style.linea}></div>
-        <Link to="/cart" className={style.bi} aria-label="Carrito de compras">
+        <Link to="/cart" className={style.bi}>
           <i className={`${style.bi} ${["bi-cart-fill"]}`}></i>
+          <span>Carrito</span>
         </Link>
+
       </div>
     </div>
   );
